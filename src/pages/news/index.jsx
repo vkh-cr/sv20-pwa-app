@@ -1,8 +1,9 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 
 import { Container, ContainerForTwo, Column, ArticleContainer } from "./styles"
 import Header from "../../components/Header"
 import ArticlePreview from "../../components/ArticlePreview"
+import Drawer from "../../components/Drawer"
 
 const articles = [
   {
@@ -16,9 +17,16 @@ const articles = [
 ]
 
 const News = () => {
+  const [drawerVisible, setIsDrawerVisible] = useState(false)
+
+  useEffect(() => {
+    console.log(drawerVisible)
+  }, [drawerVisible])
+
   return (
     <>
-      <Header>Novinky</Header>
+      <Drawer visibility={drawerVisible} setVisibility={(visilibity) => setIsDrawerVisible(visilibity)} />
+      <Header setVisibility={(visilibity) => setIsDrawerVisible(visilibity)}>Novinky</Header>
       <Container>
         <ArticlePreview article={articles[0]} type={"big"} />
       </Container>

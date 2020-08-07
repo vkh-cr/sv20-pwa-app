@@ -8,13 +8,10 @@ export const Container = styled.div`
   padding: 10px;
   margin: 0 auto;
   position: relative;
-
-
-
 `
 
 export const ArticleImage = styled.div`
-  background-image: ${({imageSrc}) => `url("${imageSrc}")`};
+  background-image: ${({ imageSrc }) => `url("${imageSrc}")`};
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -25,7 +22,7 @@ export const ArticleImage = styled.div`
   & h1 {
     position: absolute;
     bottom: 0px;
-    padding: 0 20px; 
+    padding: 0 20px;
     color: white;
     text-shadow: 2px 2px black;
     text-align: center;
@@ -37,5 +34,4 @@ export const ArticleImage = styled.div`
     cursor: pointer;
     align-self: center;
   }
-
 `
