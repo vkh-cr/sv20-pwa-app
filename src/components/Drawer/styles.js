@@ -12,5 +12,5 @@ export const Container = styled.div`
   display: flex;
   transform: translate(0px, 100%);
   transition: all 4000ms ease-out 4000s;
-  background: linear-gradient(191.97deg, #118CE5 48.35%, #23699B 109.28%);
+  background: linear-gradient(191.97deg, #118ce5 48.35%, #23699b 109.28%);
 `
