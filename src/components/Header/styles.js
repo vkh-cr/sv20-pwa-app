@@ -13,8 +13,9 @@ export const Container = styled.div`
     flex-grow: inherit;
     margin-right: 48px;
   }
-  & img {
+  & a {
     padding: 0 0 0 20px;
     cursor: pointer;
+    align-self: center;
   }
 `

@@ -6,9 +6,10 @@ import ArticlePreview from "../../components/ArticlePreview"
 
 const articles = [
   {
+    id: "studensky-velehrad-ma-tema",
     header: "Studentský velehrad 2020 představil letošní tému!",
     text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been",
-    imageSrc: "images/article.png",
+    imageSrc: "/images/article.png",
     type: "Praktické informace",
     date: new Date(),
   },
