@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React, { useState } from "react"
 import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom"

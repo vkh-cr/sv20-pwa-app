@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React, { useState } from "react"
 import { useQuery, gql } from "@apollo/client"
 
 import { Container, ContainerForTwo, Column, ArticleContainer } from "./styles"
