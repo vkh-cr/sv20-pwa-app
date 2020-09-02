@@ -1,6 +1,7 @@
 import React from "react"
 
 import { Container, NavItem, Divider } from "./styles"
+import { Link } from "react-router-dom"
 
 const Drawer = ({ visibility, setVisibility }) => {
   return (
@@ -17,21 +18,21 @@ const Drawer = ({ visibility, setVisibility }) => {
           <div>
             <img src="/icons/sv.svg" alt="O SV" />
           </div>
-          <span>SV</span>
+          <Link to="/sv" onClick={() => setVisibility(false)}>SV</Link>
         </NavItem>
         <Divider />
         <NavItem>
           <div>
             <img src="/icons/home.svg" alt="Aktuality" />
           </div>
-          <span>AKTUALITY</span>
+          <Link to="/" onClick={() => setVisibility(false)}>AKTUALITY</Link>
         </NavItem>
         <Divider />
         <NavItem>
           <div>
             <img src="/icons/harmonogram.svg" alt="Harmonogram" />
           </div>
-          <span>HARMONOGRAM</span>
+          <Link to="/harmonogram" onClick={() => setVisibility(false)}>HARMONOGRAM</Link>
         </NavItem>
         <Divider />
         <NavItem>

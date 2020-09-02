@@ -5,9 +5,10 @@ export const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 10px;
+  padding: 30px;
   margin: 0 auto;
   position: relative;
+  text-align: justify;
 `
 
 export const ArticleImage = styled.div`

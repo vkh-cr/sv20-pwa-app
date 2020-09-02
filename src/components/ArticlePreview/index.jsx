@@ -4,7 +4,19 @@ import { Container, SmallContainer, RowContainer, Type, Description, DateText, C
 import { Link } from "react-router-dom"
 
 const ArticlePreview = ({ article, type }) => {
-  const stringDate = `${article.date.getDate()}.${article.date.getMonth() + 1} ${article.date.getFullYear()}, ${article.date.getHours()}:${article.date.getMinutes()}`
+
+  // {
+  //   "id": "5f4fe6aaea25fc14f12c71d4",
+  //   "header": "BLABLABLA",
+  //   "text": "Lorem horem dolem",
+  //   "imageSrc": "balblabl",
+  //   "type": "WARNING",
+  //   "createdAt": "2020-09-02T18:38:34.718Z",
+  //   "publishAt": "2020-09-02T18:38:34.718Z"
+  // }
+  const createdAt = new Date(article.createdAt)
+  const stringDate = `${createdAt.getDate()}.${createdAt.getMonth() + 1} ${createdAt.getFullYear()}, ${createdAt.getHours()}:${createdAt.getMinutes()}`
+
   const linkTo = {
     pathname: `/article/${article.id}`,
     article: article,

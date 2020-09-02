@@ -15,7 +15,7 @@ const Article = (props) => {
         </Link>
         <h1>{article.header}</h1>
       </ArticleImage>
-      <Container>{article.text}</Container>
+      <Container dangerouslySetInnerHTML={{ __html: article.text }}></Container>
     </>
   )
 }

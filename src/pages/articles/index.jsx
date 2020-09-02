@@ -1,30 +1,37 @@
 import React, { useState, useEffect } from "react"
+import { useQuery, gql } from "@apollo/client"
 
 import { Container, ContainerForTwo, Column, ArticleContainer } from "./styles"
 import Header from "../../components/Header"
 import ArticlePreview from "../../components/ArticlePreview"
 import Drawer from "../../components/Drawer"
 
-const articles = [
-  {
-    id: "studensky-velehrad-ma-tema",
-    header: "Studentský velehrad 2020 představil letošní tému!",
-    text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been",
-    imageSrc: "/images/article.png",
-    type: "Praktické informace",
-    date: new Date(),
-  },
-]
-
 const News = () => {
   const [drawerVisible, setIsDrawerVisible] = useState(false)
 
-  useEffect(() => {
-    console.log(drawerVisible)
-  }, [drawerVisible])
+  const GET_ARTICLES = gql`
+    query GetArticles {
+      getArticles {
+        id
+        header
+        text
+        imageSrc
+        type
+        createdAt
+        publishAt
+      }
+    }
+  `
 
+  const { loading, error, data } = useQuery(GET_ARTICLES)
+
+  if (loading) return <p>Loading...</p>
+  if (error) return <p>Error :(</p>
+  const articles = data.getArticles
+  const sum = articles.length
   return (
     <>
+      {/* TODO: Dodelat Drawer, aby se pod nim nacitaly data...  */}
       <Drawer visibility={drawerVisible} setVisibility={(visilibity) => setIsDrawerVisible(visilibity)} />
       <Header setVisibility={(visilibity) => setIsDrawerVisible(visilibity)}>Novinky</Header>
       <Container>
@@ -32,20 +39,18 @@ const News = () => {
       </Container>
       <ContainerForTwo>
         <Column>
-          <ArticlePreview article={articles[0]} type={"medium"} />
+          <ArticlePreview article={articles[1]} type={"medium"} />
         </Column>
         <Column>
-          <ArticlePreview article={articles[0]} type={"medium"} />
+          <ArticlePreview article={articles[2]} type={"medium"} />
         </Column>
       </ContainerForTwo>
       <ArticleContainer>
-        <ArticlePreview article={articles[0]} />
-        <ArticlePreview article={articles[0]} />
-        <ArticlePreview article={articles[0]} />
-        <ArticlePreview article={articles[0]} />
+        { sum > 3 && articles.slice(3).map(article => <ArticlePreview article={article} />) }
       </ArticleContainer>
     </>
   )
+
 }
 
 export default News
