@@ -9,6 +9,12 @@ export const Container = styled.div`
   margin: 0 auto;
   position: relative;
   text-align: justify;
+
+  & table {
+    align-self: flex-start;
+    margin: 0 -20px;
+    width: cal(100vw - 20px);
+  }
 `
 
 export const ArticleImage = styled.div`

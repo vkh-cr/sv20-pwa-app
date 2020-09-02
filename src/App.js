@@ -12,7 +12,7 @@ import staticData from "./constants/static-paragraphs"
 
 
 const client = new ApolloClient({
-  uri: 'http://localhost:3333/graphql',
+  uri: 'http://46.36.40.177:5000/graphql',
   cache: new InMemoryCache()
 });
 
@@ -31,6 +31,9 @@ function App() {
           </Route>
           <Route path="/sv">
             <Article location={staticData.sv} />
+          </Route>
+          <Route path="/faq">
+            <Article location={staticData.faq} />
           </Route>
           <Route path="/">
             <News />

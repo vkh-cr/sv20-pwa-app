@@ -67,7 +67,7 @@ const Drawer = ({ visibility, setVisibility }) => {
           <div>
             <img src="/icons/question.svg" alt="Otazecka" />
           </div>
-          <span>FAQ</span>
+          <Link to="/faq" onClick={() => setVisibility(false)}>FAQ</Link>
         </NavItem>
       </Container>
       <div
