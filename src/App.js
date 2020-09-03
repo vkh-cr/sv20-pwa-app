@@ -12,7 +12,7 @@ import staticData from "./constants/static-paragraphs"
 
 
 const client = new ApolloClient({
-  uri: 'http://46.36.40.177:5000/graphql',
+  uri: 'https://sv.ff0000.cz/graphql',
   cache: new InMemoryCache()
 });
 
