@@ -2,9 +2,6 @@ import React, { useState } from "react"
 import { useQuery, gql } from "@apollo/client"
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs"
 
-import Header from "../../components/Header"
-import Drawer from "../../components/Drawer"
-
 import { Container } from "./styles"
 import HarmonogramBlock from "../../components/HarmonogramBlock"
 
@@ -46,8 +43,6 @@ const Harmonogram = () => {
   console.log(data)
   return (
     <>
-      <Drawer visibility={drawerVisible} setVisibility={(visilibity) => setIsDrawerVisible(visilibity)} />
-      <Header setVisibility={(visilibity) => setIsDrawerVisible(visilibity)}>Harmonogram</Header>
       <Container>
         <Tabs>
           <TabList>

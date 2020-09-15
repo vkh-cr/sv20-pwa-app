@@ -22,7 +22,7 @@ export const ArticleImage = styled.div`
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 75vh;
+  height: 25vh;
   position: relative;
   padding: 10px;
 

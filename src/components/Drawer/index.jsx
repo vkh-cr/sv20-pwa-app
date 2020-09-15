@@ -1,11 +1,14 @@
-import React from "react"
+import React, { useState } from "react"
 
 import { Container, NavItem, Divider } from "./styles"
 import { Link } from "react-router-dom"
 
-const Drawer = ({ visibility, setVisibility }) => {
+import Header from '../Header/index'
+const Drawer = () => {
+  const [ visibility, setVisibility ] = useState(false)
   return (
     <>
+      <Header setDrawer={(visilibity) => setVisibility(visilibity)}>SV20</Header>
       <Container
         style={{
           visibility: visibility ? "visible" : "hidden",
@@ -39,7 +42,7 @@ const Drawer = ({ visibility, setVisibility }) => {
           <div>
             <img src="/icons/fish.svg" alt="Fish" />
           </div>
-          <span>Duchovní PROSTOR</span>
+          <Link to="/praying-program" onClick={() => setVisibility(false)}>Duchovní PROSTOR</Link>
         </NavItem>
         <Divider />
         <NavItem>

@@ -9,7 +9,7 @@ const Header = (props) => {
         src="/icons/menu.svg"
         alt="menu"
         onClick={() => {
-          props.setVisibility(true)
+          props.setDrawer(true)
         }}
       />
       <h1>{props.children}</h1>
