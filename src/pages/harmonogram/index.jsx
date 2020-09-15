@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React from "react"
 import { useQuery, gql } from "@apollo/client"
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs"
 
@@ -6,7 +6,6 @@ import { Container } from "./styles"
 import HarmonogramBlock from "../../components/HarmonogramBlock"
 
 const Harmonogram = () => {
-  const [drawerVisible, setIsDrawerVisible] = useState(false)
 
   const GET_SOMETHING = gql`
     query GetFriday {
